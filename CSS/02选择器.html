@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*1.类型选择器*/
+			/*p{
+				color: red;
+			}*/
+			
+			/*2.类选择器*/
+			/*.h{
+				color: blue;
+			}
+			.hh{
+				background-color: gold;
+			}*/
+			
+			/*id选择器*/
+			/*#b1{
+				color: red;
+			}*/
+			
+			/*通配符*/
+			*{
+				font-size: 20px;
+			}
+			/*i{
+				color: red;
+			}*/
+			
+			/*群组选择符*/
+			p,#b1,i{
+				color: red;
+			}
+			
+			/*后代选择符*/
+			/*#box a{
+				color: red;
+			}*/
+			
+			/*子选择符*/
+			/*#box>a{
+				background-color: blue;
+			}*/
+			
+			/*初始状态*/
+			.baidu:link{
+				color: red;
+			}
+			/*被访问后的状态*/
+			.baidu:visited{
+				color: black;
+			}
+			/*鼠标移动到链接上的状态*/
+			.baidu:hover{
+				background-color: green;
+			}
+			/*鼠标按下的状态*/
+			.baidu:active{
+				font-size: 30px;
+			}
+			
+				
+			/*鼠标移动到链接上的状态*/
+			.h:hover{
+				background-color: green;
+			}
+			/*鼠标按下的状态*/
+			.h:active{
+				font-size: 30px;
+			}
+			
+			/*.list li:nth-child(2){
+				background-color: red;
+			}*/
+			.list li:nth-child(-n+3){
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<p>fdhjfdhjfds就开个饭店和高考加分的</p>
+		<p>fdhjfdhjfds就开个饭店和高考加分的</p>
+		<p>fdhjfdhjfds就开个饭店和高考加分的</p>
+		<p>fdhjfdhjfds就开个饭店和高考加分的</p>
+		<p>fdhjfdhjfds就开个饭店和高考加分的</p>
+		<h3 class="h hh">考了几分的话就赶快回家看电视</h3>
+		<h3 class="h">快递费可是到了放假啦空手道解放开绿灯是</h3>
+		<b id="b1">发尽快发货的跨境汇款单据是否和快捷方式</b>
+		<b id="b2">发尽快发货的跨境汇款单据是否和快捷方式</b>
+		<i>jkfdshkjfjkfsdh</i>
+		<div id="box">
+			<h2>父元素，同辈元素，子元素，后代元素</h2>
+			<a class="baidu" href="#">baidu</a>
+			<h1>
+				<a href="#">taobao</a>
+			</h1>
+		</div>
+		<ul class="list">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+	</body>
+</html>
