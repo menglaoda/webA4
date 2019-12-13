@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				height: 2000px;
+			}
+			#box{
+				width: 300px;
+				height: 400px;
+				border: solid 2px black;
+				background-color: pink;
+				/*box-sizing: border-box;*/
+				background-image: url(img/xing1.jpg);
+				background-repeat: no-repeat;
+				background-attachment: scroll;
+				background-position: top center;
+				background-position: bottom;/*另一个值默认的就是center*/
+				/*background-position: 0px  top;
+				background-size: contain;
+				background-size: 200px 100px;*/
+				
+				background:pink  url(img/xing1.jpg) no-repeat scroll 0px  top/200px 100px;
+			}
+			#box2{
+				width: 24px;
+				height: 24px;
+				background: url(img/index.png) 0px -107px;
+			}
+			#box3{
+				width: 24px;
+				height: 24px;
+				background: url(img/index.png) -157px -107px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<div id="box2"></div>
+		<div id="box3"></div>
+	</body>
+</html>
