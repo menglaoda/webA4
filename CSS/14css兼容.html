@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				background: red;
+				/*height: 336px;*/
+				overflow: hidden;
+			}
+			img{
+				display: block;
+			}
+			.box img:first-child{
+				float: left;
+			}
+			.box img:last-child{
+				float: right;
+				width: 400px;
+			}
+			span{
+				display: block;
+				background: blue;
+				clear: both;
+			}
+			button{
+				border: solid 1px black;
+				background: white;
+				
+			}
+			#box1{
+				width: 200px;
+				height: 4px;
+				background: #ccc;
+				margin: 50px 0px ;
+				position: relative;
+			}
+			#box2{
+				width: 20px;
+				height: 40px;
+				border: solid 1px black;
+				background: #999 !important;/*最高优先级*/
+				position: absolute;
+				left: 90px;
+				top: -18px;
+				cursor: pointer;/*鼠标指针*/
+				opacity: 0.1;
+				filter: alpha(opacity=10);
+			}
+			#box3{
+				width: 50%;
+				min-width: 200px;
+				max-width: 400px;
+				height: 100px;
+				border: solid 1px black;
+				border-radius: 10px;
+				border-radius: 10px 30px;
+				border-radius: 10px 20px 30px;
+				border-radius: 10px 20px 30px 40px;
+				border-radius: 30px/50px;/*水平半径，垂直半径*/
+				border-bottom-left-radius: 70px;
+				border-radius: 0px;
+				border-radius: 100px 100px 0px 0px;
+				position: relative;
+			}
+			#box3:before{
+				content: "12345";
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+			#box3:after{
+				content: "12345";
+				width: 100px;
+				height: 100px;
+				background: green;
+				position: absolute;
+				top: 0px;
+				left: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="img/ia_100000006.png" />
+			<img src="img/t01fef6f9d5e69335dd.jpg" />
+		</div>
+		<span> ghdhjfhjds</span>
+		<button>按钮</button>
+		<p>jkfdhgkjsdhfkjsdh</p>
+		<input type="range" />
+		<div id="box1">
+			<div id="box2" style="background: red;"></div>
+		</div>
+		<div id="box3"></div>
+	</body>
+</html>
