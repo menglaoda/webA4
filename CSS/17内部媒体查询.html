@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+			/*大于等于800px*/
+			/*@media only screen and (min-width:800px ) {
+				#box{
+					background: blue;
+				}
+			}*/
+			/*[500,800]*/
+			/*@media only screen and (min-width:500px ) and (max-width:800px) {
+				#box{
+					background: green;
+				}
+			}*/
+			/*大于等于1000px,或小于等于200*/
+			/*@media only screen and (min-width: 1000px), screen and (max-width: 200px){
+				#box{
+					background: black;
+				}
+			}*/
+			@media not screen and (min-width:1200px ) {
+				#box{
+					width: 300px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+</html>
