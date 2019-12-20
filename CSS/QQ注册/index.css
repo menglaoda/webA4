@@ -1,0 +1,155 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+a{
+	text-decoration: none;
+}
+.leftbox{
+	width: 480px;
+	height: 100vh;
+	overflow: hidden;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: url(img/ia_100000000003.jpg) center/120%;
+}
+.img1{
+	width: 120%;
+}
+.logo{
+	position: fixed;
+	height: 43px;
+	line-height: 43px;
+	top: 17px;
+	left: 30px;
+	font-size: 36px;
+}
+.logo span{
+	position: relative;
+	top: -10px;
+	left: 10px;
+}
+.logo a{
+	color: black;
+}
+.rightbox{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: calc(100% - 480px);
+}
+@media only screen and (max-width: 1218px) {
+	.leftbox{
+		left:-240px;
+	}
+	.rightbox{
+		width: calc(100% - 240px);
+	}
+}
+.nav {
+	float:right;
+	margin-right: 46px;
+	margin-top: 30px;
+}
+.nav a{
+	width: 93px;
+	height: 25px;
+	line-height: 25px;
+	float: left;
+	margin-left: 30px;
+	color: #666;
+}
+.nav a:first-child{
+	background: #fd5252;
+	border-radius: 4px;
+	color: white;
+	text-indent: -4px;
+}
+.nav img{
+	vertical-align: top;
+	position: relative;
+	top: -8px;
+	left: -4px;
+}
+.main{
+	width: 480px;
+	margin: 0 auto;
+	clear: both;
+}
+.main h1{
+	font-size: 44px;
+	font-weight: 400;
+	padding: 54px 0px 25px;
+}
+.p1{
+	font-size: 28px;
+	margin-bottom: 38px;
+}
+.p1 a{
+	float: right;
+	color: #359eff;
+}
+.user,.psw{
+	width: 100%;
+	height: 50px;	
+	text-indent: 20px;
+	margin-top: 32px;
+	border-radius: 6px;
+	border: solid 1px #666;
+	font-size: 24px;
+}
+.select1{
+	width: 152px;
+	height: 50px;
+	text-indent: 20px;
+	font-size: 24px;
+	border-radius: 6px;
+	margin-top: 32px;
+}
+.iphone{
+	width: 305px;
+	height: 50px;
+	float: right;
+	margin-top: 32px;
+	text-indent: 20px;
+	border-radius: 6px;
+	border: solid 1px #666;
+	font-size: 24px;
+}
+.span1{
+	display: block;
+	clear: both;
+	color: #999;
+	font-size: 13px;
+	margin: 10px 0px;
+}
+.btn{
+	width: 100%;
+	height: 50px;
+	border: none;
+	color: white;
+	border-radius: 6px;
+	font-size: 24px;
+	background: #3386ff;
+	margin: 28px 0px 38px;
+}
+.select2{
+	border: none;
+	outline: medium;
+}
+.p2{
+	color: #bbb;
+	font-size: 14px;
+	text-align: center;
+	margin: 96px 0px 44px;
+}
+@media only screen and (max-width: 1000px) {
+	.leftbox{
+		left:-480px;
+	}
+	.rightbox{
+		width: 100%;
+	}
+}
