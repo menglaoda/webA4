@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//定义变量,关键字 var,obj叫做变量名
+			var obj = "hello word";
+			console.log(obj);
+			
+			//同时定义多个变量
+			var a1 =10,a2=20,a3=30;
+			console.log(a3);
+			
+			var a4;
+			console.log(a4);
+			console.log(typeof a4);//"undefined"
+			
+			var a5 = null;
+			console.log(typeof a5);// "object"
+			
+			var a6 = "hello word";
+			console.log(typeof a6);// "string"
+			
+			var a7 = true;
+			console.log(typeof a7);// "boolean"
+			
+			var a8 = 10.5;
+			console.log(typeof a8);// "number"
+			
+			var a9 = 0/0;
+			console.log(a9);//"NaN"
+			
+			console.log(12/0);//"Infinity"
+			console.log(isNaN(a9));//"true"
+			
+			//字符串转换数字类型：parseInt()、parseFloat()
+			var str = "hello word";
+			var str1 = parseInt(str);
+			console.log(typeof str1);// "number"
+			console.log(parseInt(12.5));//取整
+			
+			console.log(parseFloat(12.5));// "number",12.5
+			
+			console.log(Math.round(12.5));
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
