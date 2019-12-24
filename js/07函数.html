@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//创建函数,function 关键字，fn是函数名
+			function fn(){
+				console.log("a");
+			}
+			//调用函数
+			fn();
+			
+			//计算2+8的结果。,2跟8叫做实参，a跟b叫做形参
+			function fn1(a,b){
+				console.log(a+b);
+				return a+b; // return 返回值
+			}
+			//fn1(2,8);
+			console.log(fn1(2,8,20,40));
+			
+			//练习：向一个函数传入不定数量的数值求和。
+			function fn2(){
+				//arguments 内置数组
+				console.log(arguments);
+				//length 长度，
+				console.log(arguments.length);
+				//访问数组第一个元素,通过下标（索引）去访问，下标从0开始
+				console.log(arguments[3]);
+				//访问最后一个数组元素
+				console.log(arguments[arguments.length-1]);
+				var s = 0;
+				for(var i=0;i<arguments.length;i++){
+					s+=arguments[i];
+				}
+				console.log(s);
+			}
+			fn2(1,2,3,45,6,7,8,9,0,12,22,22,222,44,55,66,77);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

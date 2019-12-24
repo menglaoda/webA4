@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+//			在输入框中输入数字, 点击按钮调用函数来判断奇偶性?
+			
+			
+//			var btn = document.getElementById("btn");
+//			console.log(btn.innerHTML);
+
+			//文档加载完毕后才会执行大括号里边的代码
+			window.onload = function(){
+				//1.获取元素节点
+				var btn = document.getElementById("btn");
+				var val = document.getElementById("val");
+				var p1 = document.getElementById("p1");
+				//2.给按钮绑定点击事件
+				btn.onclick = function(){
+					//3.拿到文本框的值
+					//value 文本框的值(及其它表单控件)
+					//console.log(val.value);
+					//val.value = 12345; 设置文本框的值
+					fn(val.value);
+				}
+				function fn(n){
+					if(n%2==0){
+						//修改p标签的值
+						p1.innerHTML = n+"是一个偶数";
+					}else{
+						p1.innerHTML = n+"是一个奇数";
+					}
+				}
+				
+				//示例：点击搜索按钮调用函数清空文本框的内容。
+				var btn2 = document.getElementById("btn2");
+				btn2.onclick = function(){
+					fn2();
+				}
+				function fn2(){
+					val.value = "";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="val" />
+		<button id="btn">按钮</button>
+		<button id="btn2">搜素</button>
+		<p id="p1"></p>
+	</body>
+</html>

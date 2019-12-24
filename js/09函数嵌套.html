@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+//			函数内部可以再包含其他函数 
+//			函数之间允许相互调用，也允许向外调用,
+//			不可以调用同级函数的嵌套函数
+			function a(){
+				console.log("a");
+				function b(){//函数b也是局部变量
+					console.log("b");
+				}
+				b();
+				var a1  = 10;//局部变量
+			}
+			//a();
+			//console.log(a1);//a1 is not defined"
+			function c(){
+				console.log("c");
+				//b();b is not defined"
+			}
+			c();
+			//b(); b is not defined"
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
