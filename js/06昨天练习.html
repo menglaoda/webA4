@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//1.打印1——100的所有自然数，使用while。
+			var i=0;
+			while(i<100){
+				i++;
+				document.write(i+"<br />");
+			}
+			
+			//2.通过do while，找出1000以内所有的7的倍数。
+			var a1 = 0;
+			do{
+				a1++;
+				if(a1%7==0){
+					document.write(a1+"<br/>");
+				}
+			}while (a1<1000);
+			
+			//3.求5!(1*2*3*4*5)
+			var a2 = 1;
+			for(var j=1;j<=5;j++){
+				a2*=j;
+			}
+			console.log(a2);
+			
+			//4普通顾客购物满100元打9折；会员购物打8折；会员购物满200打7.5折
+			var a3 = 120;//购物金额
+			var b1 = 0 ;//1为会员
+			if(b1==1){
+				if(a3>=200){
+					console.log(a3*0.75);
+				}else if(a3>=100){
+					console.log(a3*0.8);
+				}else{
+					console.log(a3);
+				}
+			}else{
+				if(a3>=100){
+					console.log(a3*0.9);
+				}else{
+					console.log(a3);
+				}
+			}
+			
+			//5会员购物时，根据积分的不同享受不同的折扣，计算会员购物时所获得折扣
+			var x = 9000;
+			if(x<2000){
+				console.log("购物打9折");
+			}else if(x>=2000 && x<4000){
+				console.log("购物打8折");
+			}else if(x>=4000 && x<8000){
+				console.log("购物打7折");
+			}else{
+				console.log("购物打6折");
+			}
+			
+			//6韩嫣参加计算机编程大赛
+//			如果获得第一名，将参加麻省理工大学组织的1个月夏令营
+//			如果获得第二名，将奖励惠普笔记本电脑一部
+//			如果获得第三名，将奖励移动硬盘一个
+//			否则，不给任何奖励
+			var a4 = 4;
+			switch(a4){
+				case 1:
+				console.log("参加麻省理工大学组织的1个月夏令营");
+				break;
+				case 2:
+				console.log("奖励惠普笔记本电脑一部");
+				break;
+				case 3:
+				console.log("奖励移动硬盘一个");
+				break;
+				default:
+				console.log("不给任何奖励");
+				break;
+			}
+			
+//			7输入赵本山的考试成绩，显示所获奖励
+//			成绩==100分，爸爸给他买辆车
+//			成绩>=90分，妈妈给他买MP4
+//			90分>成绩>=60分，妈妈给他买本参考书
+//			成绩<60分，什么都不买 
+			var a5 = 59;
+			if(a5==100){
+				console.log("爸爸给他买辆车")
+			}else if(a5>=90){
+				console.log("妈妈给他买MP4")
+			}else if(a5>=60){
+				console.log("妈妈给他买本参考书")
+			}else{
+				console.log("什么都不买 ")
+			}
+			
+//			8张三为他的手机设定了自动拨号
+//			按1：拨爸爸的号
+//			按2：拨妈妈的号
+//			按3：拨爷爷的号
+//			按4：拨奶奶的号 
+			var a6 = 1;
+			switch(a6){
+				case 1:
+				console.log("拨爸爸的号");
+				break;
+				case 2:
+				console.log("拨妈妈的号");
+				break;
+				case 3:
+				console.log("拨爷爷的号");
+				break;
+				case 4:
+				console.log("拨奶奶的号 ");
+				break;
+				default:
+				console.log("不拨号");
+				break;
+			}
+			
+			//9.一个新入职，月工资为2000元的员工，每年涨当年工资5%，20年后的月工资是多少？
+			var a7 = 2000;
+			for(var j=2;j<=20;j++){
+				a7=(1+0.05)*a7;
+				document.write("第"+j+"年工资为："+a7+"<br />");
+			}
+			
+			//10.山上有一口缸可以装50升水，现在有15升水。老和尚叫小和尚下山挑水，每次可以挑5升。问：小和尚要挑几次水才可以把水缸挑满？通过编程解决这个问题。
+			console.log((50-15)/5);
+			
+			//11.打印100–200之间所有能被3或者7整除的数
+			for(var j=100;j<=200;j++){
+				if(j%3==0 ||j%7==0){
+					document.write(j+"<br />");
+				}
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
