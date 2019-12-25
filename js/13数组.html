@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var arr = new Array();//定义一个空数组
+			
+			var arr1 = new Array(10);//定义了一个长度为10的数组，
+			
+			var arr2 = new Array("hello word");//定义了一个长度为1的数组，数组元素为hello word
+			console.log(arr2);
+			
+			//字面量方式定义数组
+			var arr3 = [];//空数组
+			var arr4 = [1,2,34,4];
+			
+			//length属性
+			console.log(arr4.length);
+			
+			//使用数组元素（访问）
+			console.log(arr4[2]);
+			
+			//访问最后一个数组元素
+			console.log(arr4[arr4.length-1]);
+			
+			arr4[2]=10;
+			console.log(arr4);
+			
+			//遍历数组
+			for(var i=0;i<arr4.length;i++){
+				console.log(arr4[i]);
+			}
+			
+			//for...in 
+			for(var i in arr4){
+				document.write(arr4[i]+"<br />");
+			}
+			
+			//例：[12,34]---->[34,12]
+			var arr = [12,34];
+			var a1 = arr[0];
+			arr[0] = arr[1];
+			arr[1] = a1;
+			console.log(arr);
+			
+			//将数组[8,9,7,6,5,4]进行升序排序，[4,5,6,7,8,9]
+			var arr = [8,9,7,6,5,4];
+			for(var i= 0;i<arr.length;i++){
+				for(var j=0;j<arr.length;j++){
+					if(arr[j]>arr[j+1]){
+						var a1 = arr[j];
+						arr[j] = arr[j+1];
+						arr[j+1] = a1;
+					}
+				}
+			}
+			console.log(arr);
+			
+			//请将数组[1,46,74,3,5,5]中的元素右移1位，[5,1,46,74,3,5]
+			var arr = [1,46,74,3,5,5];
+			var arr1 = [];
+			for(var i=0;i<arr.length-1;i++){
+				arr1[i+1]=arr[i];
+			}
+			arr1[0]=arr[arr.length-1];
+			console.log(arr1);
+			
+			//在数组[1,46,74,3,5,5]的下标为2的位置插入一个数字8，结果为[1,46,8,74,3,5,5] 。
+			var arr = [1,46,74,3,5,5];
+			var arr1 = [];
+			for(var i=2;i<arr.length;i++){
+				arr1[i+1]=arr[i];
+			}
+			for(var i=0;i<2;i++){
+				arr1[i]=arr[i];
+			}
+			arr1[2]=8;
+			console.log(arr1);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
