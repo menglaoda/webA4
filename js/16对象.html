@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//1.创建对象
+			var obj = new Object();
+			//添加属性字段
+			obj.name = "张三";
+			obj.sex = "男";
+			console.log(obj.name);
+			//添加方法
+			obj.fn = function(){
+				alert("哈哈哈");
+			}
+			obj.fn();
+			
+			//2.
+			var obj1 = Object();
+			
+			//3.字面量方式创建对象
+			var obj2 = {
+				name:"李四",
+				"age":18,
+				'sex':"男",
+				fn:function(){
+					alert("hhhh");
+				}
+			};
+			obj2.fn();
+//			obj2.name = "张三2";
+//			obj2.sex = "男2";
+//			
+			// 使用 delete 删除对象属性
+			delete obj2.name;
+			console.log(obj2.name);//点语法
+			console.log(obj2["age"]);//中括号表示法
+			
+			//4、从前有座山（Mountain）,
+//			山里有座庙（Temple）;
+//			庙里有个老和尚（oldMonk）,有个小和尚（littleMonk）。
+//			山有name,height,
+//			庙有name,area 
+//			和尚能挑水,讲故事,化缘。
+			var Mountain = {
+				name:"青秀山",
+				height:100,
+				Temple:{
+					name:"青秀庙",
+					area:500,
+					littleMonk:{
+						name:"小和尚",
+						fn1:function(){
+							alert("能挑水")
+						},
+						fn2:function(){
+							alert("讲故事")
+						},
+						fn3:function(){
+							alert("化缘")
+						}
+					},
+					oldMonk:{
+						name:"老和尚",
+						fn1:function(){
+							alert("能挑水")
+						},
+						fn2:function(){
+							alert("讲故事")
+						},
+						fn3:function(){
+							alert("化缘")
+						}
+					}
+				}
+			}
+			console.log(Mountain)
+			
+			var Mountain = new Object();
+			Mountain.name = "青秀山";
+			Mountain.Temple = new Object();
+			Mountain.Temple.name = "青秀庙";
+			Mountain.Temple.oldMonk = new Object();
+			Mountain.Temple.oldMonk.name = "老和尚";
+			console.log(Mountain);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
