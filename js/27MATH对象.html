@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//Math 对象用于执行数学任务
+			console.log(Math.round(3.6));     //四舍五入)
+		
+			//Math.random()          //返回(0-1)之间的随机数
+			console.log(Math.random());
+			
+			//Math.max(num1, num2)  //返回较大的数
+			console.log(Math.max(10,4,20,30));
+			
+			//Math.min(num1, num2)   //返回较小的数
+			console.log(Math.min(1,3));
+			
+			//Math.abs(num)     //绝对值
+			console.log(Math.abs(-1));
+			
+			//Math.ceil(19.3)     //向上取整
+			console.log(Math.ceil(19.3));
+			
+			//Math.floor(11.8)    //向下取整
+			console.log(Math.floor(19.3));
+			
+			//Math.pow(x,y)       //x的y次方
+			console.log(Math.pow(10,3));
+			
+			//Math.sqrt(num)     //开平方
+			console.log(Math.sqrt(9));
+			
+			//例：获取[0-10]中的随机整数
+			console.log(Math.round(Math.random()*10));
+			for(var i=0;i<100;i++){
+				document.write(Math.round(Math.random()*10)+"<br />");
+			}
+			
+			//获取[A-Z]的随机字母
+			var c1 = Math.round(Math.random()*25)+65;
+			console.log(String.fromCharCode(c1));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
