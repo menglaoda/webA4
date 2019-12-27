@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 300px;
+				height: 200px;
+				background: orange;
+				text-align: center;
+				line-height: 200px;
+			}
+		</style>
+		<script type="text/javascript">
+//			6、写一个定时器, 每隔1秒修改一次div内文字颜色和文字大小.
+//			 最开始这个文字是默认大小, 开启定时器后文字大小开始增大, 
+//			当增大了6次以后, 文字大小开始缩小, 缩小6次, 文字再开始增大…
+//			效果如下图:
+			window.onload = function(){
+				var box = document.getElementById("box");
+				var i = 16;
+				var a1 = 4;
+				var b1 = 0;
+				setInterval(function(){
+					if(b1%6==0 && b1!=0){
+						a1*=-1;
+					}
+					b1++;
+					i+=a1;
+					box.style.fontSize=i+"px";
+				},1000)
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">看我72变</div>
+	</body>
+</html>

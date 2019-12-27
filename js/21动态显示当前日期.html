@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var p1 = document.getElementById("p1");
+				setInterval(function(){
+					var d = new Date();
+					var h = d.getHours();
+					var m = d.getMinutes();
+					var s = d.getSeconds();
+					p1.innerHTML = d.toLocaleDateString()+" "+fn(h)+"时"+fn(m)+"分"+fn(s)+"秒";
+				},1000)
+				//补0函数
+				function fn(n){
+					return n<10?"0"+n:n;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<p id="p1">xx年xx月xx日 09时21分30秒</p>
+	</body>
+</html>
