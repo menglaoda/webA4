@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//1、将下面的字符串str的敏感字符*用空字符串””替换; (要正确表示*得转义成:\*) 
+			var str =  "H e  l  ** l    o    Wo r         L d  !";
+			var str2 = str.replace(/\*/g,"");
+			console.log(str2);
+			
+			//2、将str的空格 用空字符串””替换;
+			var str3 = str2.replace(/ /g,"");
+			console.log(str3);
+			
+			//3、去掉字符串123@zh@qq.com中的@;
+			var str = "123@zh@qq.com";
+			var str2 = str.replace(/@/g,"");
+			console.log(str2);
+			
+			//4、任意给定的一串字符，统计字符串里面的大写字母和小写字母的个数
+			var str = "H e  l  ** l    o    Wo r         L d  !";
+			var max = 0;
+			var min = 0;
+			for(var i=0;i<str.length;i++){
+				if(str.charCodeAt(i)>=65 && str.charCodeAt(i)<=90){
+					max++;
+				}
+				if(str.charCodeAt(i)>=97 && str.charCodeAt(i)<=122){
+					min++;
+				}
+			}
+			console.log("大写字母个数为："+max+",小写字母个数为："+min);
+			
+			//5、已知有两个字符串str1 = ‘hello’ , str2 = ‘world’,将两个字符串组成一个;且中间有空格。
+			var str = "hello";
+			var str2 = "word";
+			console.log(str+" "+str2);
+			
+			//6、已知字符串str = “I love BeiJing”,找出love的范围
+			var str = "I love BeiJing";
+			var str2 = "love";
+			var n1 = str.indexOf("love");
+			var n2 = str2.length;
+			console.log(str.substr(n1,n2));
+			
+			//7、已知字符串str = “I hate BeiJing!”,提取第3个字符到第5个字符
+			var str = "I hate BeiJing!";
+			console.log(str.substring(3,5));
+			
+			//将字符串str = “When I was young, I love a girl in neighbor class.”中,从young提取到girl。但是不许数
+			var str = "When I was young, I love a girl in neighbor class."	;
+			var a1 = "young";
+			var a2 = "girl";
+			var n1 = str.indexOf(a1);
+			var n2 = str.indexOf(a2);
+			console.log(str.substring(n1,n2+a2.length));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var username = document.getElementById("username");
+				var btn = document.getElementById("btn");
+				var psw1 = document.getElementById("psw1");
+				var psw2 = document.getElementById("psw2");
+				var yzm = document.getElementById("yzm");
+				var span1 = document.getElementById("span1");
+				btn.onclick = function(){
+					//1、用户名不可以用数字开头，不能为空，用户名长度不低于6，不高于20
+					if((username.value[0]>=0 &&username.value[0]<=9) ||username.value.length==0||username.value.length<6||username.value.length>20 ){
+						return false;
+					}
+					//2、密码不能为空,3、两次填写密码必需一致才能提交
+					if(psw1.value.length==0 ||psw2.value.length==0||psw1.value!=psw2.value){
+						return false;
+					}
+					//4、随机生成验证码，如： 4YT8，验证码要有切换功能，能忽略大小写
+					if(yzm.value.toUpperCase()!=span1.innerHTML){
+						return false;
+					}
+					alert("数据合法");
+				}
+				//验证码要有切换功能，
+				span1.onclick = function(){
+					var n1 = Math.floor(Math.random()*10);
+					var n2 = Math.floor(Math.random()*10);
+					var n3 = String.fromCharCode(Math.floor(Math.random()*26)+65);
+					var n4 = String.fromCharCode(Math.floor(Math.random()*26)+65);
+					console.log(n1+","+n2+","+n3+","+n4);
+					//var arr = [1,2,3,4]
+					span1.innerHTML = n1+""+n2+n3+n4;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form name="myform" action="#" method="get">
+		<label for="username">用户名</label>
+		<input type="text" id="username" />
+		<br />
+		<label for="psw1">密码</label>
+		<input type="password" id="psw1" />
+		<br />
+		<label for="psw2">确认密码</label>
+		<input type="password" id="psw2" />
+		<br />
+		<label for="yzm">验证码</label>
+		<input type="text" id="yzm" />
+		<span id="span1">AB12</span>
+		<br />
+		<input id="btn" type="submit" />
+		</form>
+	</body>
+</html>

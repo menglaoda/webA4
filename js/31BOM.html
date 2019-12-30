@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//window对象的部分方法:
+			//window.alert("弹窗");
+			
+//			if(confirm("点击确定或取消")){
+//				console.log("点击了确定按钮");
+//			}else{
+//				console.log("点击了取消按钮");
+//			}
+			
+			//prompt()方法
+//			var num = prompt("请输入一个数字");
+//			console.log(num);
+
+			//print(): 调出打印对话框
+			//print();
+			
+			 //window.open() 方法可以导航到一个特定的URL，也可以打开
+			//一个新的浏览器窗口，一般可以接受三个参数:
+			//open("https://www.baidu.com");
+			//open("https://www.baidu.com","_parent");
+			//open("https://www.baidu.com","_blank","width=200,height=200,top=100,left=50");
+			
+			//延时器
+			setTimeout(function(){
+				console.log("a");
+			},3000)
+			
+			setTimeout(fn,3000);
+			function fn(){
+				console.log("b");
+				//window.close(); //关闭窗口
+				window.open("about:blank","_self").close()
+
+			}
+			
+			 var timer = setTimeout("console.log('c')",3000);
+			
+			//关闭延时器
+			clearTimeout(timer);
+			
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
