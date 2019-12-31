@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				//获取元素节点
+				//getElementById 获取id名
+				var box = document.getElementById("box");
+				console.log(box);
+				
+				//getElementsByTagName, 标签名称,返回一个数组
+				var oli = document.getElementsByTagName("li");
+				console.log(oli.length);
+				console.log(oli[0].innerHTML);
+				
+				var list = document.getElementById("list");
+				var listoli = list.getElementsByTagName("li");
+				console.log(listoli.length);
+				for(var i=0;i<listoli.length;i++){
+					listoli[i].index = i ;
+					listoli[i].onclick = function(){
+						console.log(this.index);
+					}
+				}
+				
+				//getElementsByName(),name属性的值，返回数组
+				var inp = document.getElementsByName("myinput");
+				console.log(inp);
+				
+				//getElementsByClassName  class名，返回数组
+				var op = document.getElementsByClassName("p1");
+				console.log(op);
+				
+				//querySelector 获取一个
+				var box1 = document.querySelector("#box");
+				var box2 = document.querySelector(".box");
+				var p1 = document.querySelector("p");
+				console.log(p1);
+				
+				//querySelectorAll 数组
+				var op1 = document.querySelectorAll("p");
+				console.log(op1);
+				
+				//获取属性(固有属性，自定义属性)
+				console.log(box.title);//点语法 "盒子"
+				console.log(box["title"]);//中括号表示法  "盒子"	
+				console.log(box.className);//"obox"
+				console.log(box.name);//"undefined",
+				
+				// getAttribute()方法将获取元素中某个属性的值。
+				console.log(box.getAttribute("name"));
+				
+				//setAttribute()方法将设置元素中某个属性和值
+				box.setAttribute("title","bbbb");
+				box.setAttribute("ccc","hhhh");
+				
+				//removeAttribute() 可以移除 HTML 属性。
+				box.removeAttribute("class");
+				
+				//innerHTML
+				console.log(box.innerHTML);//<span>1这是一个div</span>
+				
+				//innerText
+				console.log(box.innerText);//1这是一个div
+				
+				//outerHTML
+				console.log(box.outerHTML);//<div id="box" title="bbbb" name="aaa" ccc="hhhh"><span>1这是一个div</span></div>
+				box.onclick = function(){
+					console.log(this);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		节点分类：
+		元素节点：div
+		属性节点：id="box"
+		文本节点：这是一个div
+		<div id="box" title="盒子"  class="obox" name="aaa"><span>1这是一个div</span></div>
+		<div id="box" class="box2">2这是一个div</div>
+		<ul>
+			<li>1活动方式更好</li>
+			<li>2活动方式更好</li>
+			<li>3活动方式更好</li>
+			<li>4活动方式更好</li>
+			<li>5活动方式更好</li>
+		</ul>
+		<ul id="list">
+			<li>11活动方式更好</li>
+			<li>22活动方式更好</li>
+			<li>33活动方式更好</li>
+			<li>44活动方式更好</li>
+			<li>55活动方式更好</li>
+		</ul>
+		<input type="text" name="myinput" value="1" size="" maxlength=""/>
+		<input type="text" name="myinput" value="2"/>
+		<input type="text" name="myinput" value="3"/>
+		<p class="p1">阶段划分等级考试辅导捷克首都和反抗精神的 </p>
+		<p class="p1">阶段划分等级考试辅导捷克首都和反抗精神的 </p>
+		<p class="p1">阶段划分等级考试辅导捷克首都和反抗精神的 </p>
+	</body>
+</html>
