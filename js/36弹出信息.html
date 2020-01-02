@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var btn = document.getElementById("btn");
+				var inp = document.getElementsByTagName("input");
+				btn.onclick = function(){
+					alert(inp[0].value+","+inp[1].value+","+inp[2].value+","+inp[3].value)
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" placeholder="姓名" />
+		<input type="text" placeholder="年龄" />
+		<input type="text" placeholder="学历" />
+		<input type="text" placeholder="专业" />
+		<button id="btn">保存</button>
+	</body>
+</html>

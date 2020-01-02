@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			img{
+				width: 300px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oimg = document.getElementsByTagName("img");
+				for(var i=0;i<oimg.length-1;i++){
+					oimg[i].onclick = function(){
+						oimg[3].src = this.src;
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<img src="../CSS/QQ空间/img/ia_100000000084.jpg" />
+		<img src="../CSS/QQ空间/img/ia_100000000086.jpg" />
+		<img src="../CSS/QQ空间/img/ia_100000000087.jpg" />
+		<br />
+		<img src="../CSS/QQ空间/img/ia_100000000084.jpg" />
+	</body>
+</html>

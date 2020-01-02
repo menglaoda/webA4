@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			img{
+				width: 100%;
+				height: 100vh;
+			}
+			#btn{
+				position: fixed;
+				top: 20px;
+				left: 20px;
+			}
+			.zhe{
+				width: 100%;
+				height: 100vh;
+				position: fixed;
+				top: 0px;
+				left: 0px;
+				background: #000000;
+				opacity: 0.5;
+				display: none;
+			}
+			.left{
+				width: 300px;
+				height: 100vh;
+				background: red;
+				position: fixed;
+				top: 0px;
+				left: -300px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var btn = document.querySelector("#btn");
+				var zhe = document.querySelector(".zhe");
+				var leftbox = document.querySelector(".left");
+				var i = -300;
+				var timer1 ;
+				var timer2 ;
+				btn.onclick = function(){
+					zhe.style.display = "block";
+					clearInterval(timer1);
+					clearInterval(timer2);
+					timer1 = setInterval(function(){
+						i+=10;
+						if(i>0){
+							clearInterval(timer1);
+						}else{
+							leftbox.style.left = i+"px"; 
+						}
+					},20)
+				}
+				zhe.onclick = function(){
+					zhe.style.display = "none";
+					clearInterval(timer1);
+					clearInterval(timer2);
+					timer2 = setInterval(function(){
+						i-=10;
+						if(i<-300){
+							clearInterval(timer2);
+						}else{
+							leftbox.style.left = i+"px"; 
+						}
+					},20)
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<img src="../CSS/img/t01fef6f9d5e69335dd.jpg" />
+		<button id="btn">弹出</button>		
+		<div class="zhe"></div>
+		<div class="left"></div>
+	</body>
+</html>
