@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				list-style: none;
+				font-size: 30px;
+			}
+			img{
+				height: 40px;
+				vertical-align: top;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oimg = document.querySelectorAll("img");
+				for(var i=0;i<oimg.length;i++){
+					oimg[i].index = i;
+					oimg[i].onclick = function(){
+						var n = this.index%5;
+						console.log(n);
+						var img1 = this.parentNode.querySelectorAll("img");
+						for(var j=0;j<img1.length;j++){
+							img1[j].src = "img/xing2.png";
+						}
+						for(var j=0;j<=n;j++){
+							img1[j].src = "img/xing1.jpg";
+						}
+						if(n==0){
+							this.parentNode.querySelector("b").innerHTML = "非常差"
+						}
+						if(n==1){
+							this.parentNode.querySelector("b").innerHTML = "差"
+						}
+						if(n==2){
+							this.parentNode.querySelector("b").innerHTML = "一般"
+						}
+						if(n==3){
+							this.parentNode.querySelector("b").innerHTML = "好"
+						}
+						if(n==4){
+							this.parentNode.querySelector("b").innerHTML = "非常好"
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>
+				<span>服务态度：</span>
+				<img src="img/xing2.png" />
+				<img src="img/xing2.png" />
+				<img src="img/xing2.png" />
+				<img src="img/xing2.png" />
+				<img src="img/xing2.png" />
+				<b>好</b>
+			</li>
+			<li>
+				<span>服务态度：</span>
+				<img src="img/xing2.png" />
+				<img src="img/xing2.png" />
+				<img src="img/xing2.png" />
+				<img src="img/xing2.png" />
+				<img src="img/xing2.png" />
+				<b>好</b>
+			</li>
+			<li>
+				<span>服务态度：</span>
+				<img src="img/xing2.png" />
+				<img src="img/xing2.png" />
+				<img src="img/xing2.png" />
+				<img src="img/xing2.png" />
+				<img src="img/xing2.png" />
+				<b>好</b>
+			</li>
+		</ul>
+	</body>
+</html>

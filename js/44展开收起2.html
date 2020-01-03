@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin:0;
+				padding: 0;
+			}
+			ul{
+				list-style: none;
+				width: 50%;
+				margin: 0 auto;
+			}
+			li{
+				background: orange;
+				margin: 20px 0px;
+				padding: 20px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var op = document.querySelectorAll("p");
+				for(var i=0;i<op.length;i++){
+					op[i].title = op[i].innerHTML;
+					op[i].innerHTML = op[i].title.substring(0,20)+"...";
+				}
+				var btn = document.querySelectorAll(".btn");
+				for(var j=0;j<btn.length;j++){
+					btn[j].onclick = function(){
+						if(this.innerHTML=="展开"){
+							this.innerHTML = "收起";
+							this.parentNode.querySelector("p").innerHTML = this.parentNode.querySelector("p").title;
+						}else{
+							this.innerHTML = "展开";
+							this.parentNode.querySelector("p").innerHTML = this.parentNode.querySelector("p").title.substring(0,20)+"...";
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>
+				<h3>1.什么叫区块链？</h3>
+				<p>1空间分段函数愧疚反倒是科技发达和愧疚反倒是发动机是客户反馈进度是防火等级考试发挥发的时间发货是大家看法和扩大寄生蜂</p>
+				<span>2020-01-03</span>
+				<button class="btn">展开</button>
+			</li>
+			<li>
+				<h3>1.什么叫区块链？</h3>
+				<p>2空间分段函数愧疚反倒是科技发达和愧疚反倒是发动机是客户反馈进度是防火等级考试发挥发的时间发货是大家看法和扩大寄生蜂</p>
+				<span>2020-01-03</span>
+				<button class="btn">展开</button>
+			</li>
+			<li>
+				<h3>1.什么叫区块链？</h3>
+				<p>3空间分段函数愧疚反倒是科技发达和愧疚反倒是发动机是客户反馈进度是防火等级考试发挥发的时间发货是大家看法和扩大寄生蜂</p>
+				<span>2020-01-03</span>
+				<button class="btn">展开</button>
+			</li>
+			<li>
+				<h3>1.什么叫区块链？</h3>
+				<p>4空间分段函数愧疚反倒是科技发达和愧疚反倒是发动机是客户反馈进度是防火等级考试发挥发的时间发货是大家看法和扩大寄生蜂</p>
+				<span>2020-01-03</span>
+				<button class="btn">展开</button>
+			</li>
+		</ul>
+	</body>
+</html>

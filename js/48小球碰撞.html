@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#obox{
+				width: 400px;
+				height: 400px;
+				border: solid 1px black; 
+				margin: 100px auto;
+				position: relative;
+			}
+			#redbox{
+				width: 20px;
+				height: 20px;
+				background: red;
+				position: absolute;
+				top: 20px;
+				left: 20px;
+			}
+			#bluebox{
+				width: 20px;
+				height: 20px;
+				background: blue;
+				position: absolute;
+				top: 20px;
+				left: 320px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var obox = document.getElementById("obox");
+				var redbox = document.getElementById("redbox");
+				var bluebox = document.getElementById("bluebox");
+				var x1 = (Math.random()*4+1);
+				var y1 = (Math.random()*4+1);
+				var x2 = (Math.random()*4+1);
+				var y2 = (Math.random()*4+1);
+				var timer = setInterval(function(){
+					//获取当前位置
+					var left1 = redbox.offsetLeft;
+					var top1 = redbox.offsetTop;
+					var left2 = bluebox.offsetLeft;
+					var top2 = bluebox.offsetTop;
+					//碰到下边框
+					if(top1+redbox.offsetHeight>=obox.offsetHeight){
+						y1=-(Math.random()*4+1);
+					}
+					//碰到上边框
+					if(top1<=0){
+						y1=(Math.random()*4+1);
+					}
+					//碰到左边框
+					if(left1<=0){
+						x1=(Math.random()*4+1);
+					}
+					//碰到右边框
+					if(obox.offsetWidth<=redbox.offsetWidth+left1){
+						x1=-(Math.random()*4+1);
+					}
+					//碰到下边框
+					if(top2+bluebox.offsetHeight>=obox.offsetHeight){
+						y2=-(Math.random()*4+1);
+					}
+					//碰到上边框
+					if(top2<=0){
+						y2=(Math.random()*4+1);
+					}
+					//碰到左边框
+					if(left2<=0){
+						x2=(Math.random()*4+1);
+					}
+					//碰到右边框
+					if(obox.offsetWidth<=bluebox.offsetWidth+left2){
+						x2=-(Math.random()*4+1);
+					}
+					//两小球碰撞
+					if(Math.abs(left1-left2)<=20 && Math.abs(top1-top2)<=20){
+						console.log("碰撞了");
+						x1*=-1;
+						y1*=-1;
+						x2*=-1;
+						y2*=-1;
+					}
+					redbox.style.left = left1+x1+"px";
+					redbox.style.top = top1+y1+"px";
+					bluebox.style.left = left2+x2+"px";
+					bluebox.style.top = top2+y2+"px";
+				},30)
+			}
+		</script>
+	</head>
+	<body>
+		<div id="obox">
+			<div id="redbox"></div>
+			<div id="bluebox"></div>
+		</div>
+	</body>
+</html>
