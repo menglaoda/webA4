@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">			
+			window.onload = function(){
+				var btn2 = document.querySelector("#btn2");
+				btn2.onclick = function(){
+					alert("bbbb");
+				}
+				
+			}
+			function fn(){
+				alert("aaaa");
+			}
+		</script>
+	</head>
+	<body>
+		<h1>1.内联模式</h1>
+		<button id="btn" onclick="fn()">弹窗</button>
+		<h1>2.脚本模式</h1>
+		<button id="btn2">弹窗</button>
+	</body>
+</html>

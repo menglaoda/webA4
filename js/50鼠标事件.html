@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+			#box1{
+				width: 100px;
+				height: 100px;
+				background: blue;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var btn = document.getElementById("btn");
+				var box = document.getElementById("box");
+				//click： 当单击鼠标按钮并在松开时触发
+				btn.onclick = function() {
+				   console.log('单击了鼠标'); 
+				};
+				
+				//dblclick： 当双击鼠标按钮时触发。
+				btn.ondblclick = function() {
+				        console.log('双击了鼠标'); 
+				};
+
+				//mousedown：当按下了鼠标还未松开时触发。 
+				btn.onmousedown = function() {
+				        console.log('按下鼠标'); 
+				};
+				
+				//mouseup： 释放鼠标按钮时触发。 
+				btn.onmouseup = function() {
+				        console.log('松开了鼠标'); 
+				};
+				
+				//mouseover：当鼠标移入某个元素的那一刻触发。
+				btn.onmouseover = function() {
+				        console.log('鼠标移入了'); 
+				}; 
+				
+				//mouseout：当鼠标刚移出某个元素的那一刻触发。 
+				btn.onmouseout = function() {
+				        console.log('鼠标移出了'); 
+				}; 
+				
+				//mousemove：当鼠标指针在某个元素上移动时触发。
+//				btn.onmousemove = function() {
+//				        console.log('鼠标移动了'); 
+//				};  
+				
+				//当鼠标移入某个元素的那一刻触发
+				box.onmouseenter = function() {
+				    console.log('鼠标移入了2'); 
+				}; 
+				
+				//当鼠标刚移出某个元素的那一刻触发。 
+				box.onmouseleave = function() {
+				    console.log('鼠标移出了2'); 
+				};
+			}
+		</script>
+	</head>
+	<body>
+		<button id="btn">按钮</button>
+		<div id="box">
+			<div id="box1"></div>
+		</div>
+	</body>
+</html>

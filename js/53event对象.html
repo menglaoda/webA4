@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var btn = document.querySelector("#btn");
+				function fn(){
+					console.log(arguments);
+				}
+				fn();
+				document.onclick = function(e){
+					console.log(arguments);
+					//MouseEvent
+					var e = e||event;//获取event对象
+					console.log(e);
+					//button属性
+					console.log(e.button);
+					//可视区坐标
+					console.log(e.clientX+","+e.clientY);
+					//屏幕区坐标
+					console.log(e.screenX+","+e.screenY);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<button id="btn">按钮</button>
+	</body>
+</html>
