@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var btn = document.getElementById("btn");
+				//1、 添加事件监听器
+				btn.addEventListener("click",fn1,false);
+				function fn1(){
+					console.log("按钮被点击了");
+				}
+				document.addEventListener("click",fn2,true);
+				function fn2(){
+					console.log("文档被点击了");
+				}
+				
+				//2、移除事件监听器
+				btn.removeEventListener("click",fn1);
+			}
+		</script>
+	</head>
+	<body>
+		<button id="btn">按钮</button>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var val = document.getElementById("val");
+				var a1 = document.getElementById("a1");
+				a1.onclick = function(){
+//					if(confirm("点击确定或取消")){
+//						
+//					}else{
+//						return false;
+//					}
+					
+//					if(val.value =='12345'){
+//						
+//					}else{
+//						return false;
+//					}
+					
+					if(val.value=="12345"){
+						//open("https://www.baidu.com");
+						a1.setAttribute("href","https://www.baidu.com")
+					}else{
+						return false;
+					}
+					
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="val" />
+		<a id="a1" href="#">baidu</a>
+	</body>
+</html>
