@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+		</style>
+		<script type="text/javascript">
+//			有一个红色的div块
+//			1, 如果我按下ctrl+c变换颜色
+//			2, 如果我按下ctrl + shift + r 重置颜色,回复初始颜色
+//			3, 如果我按下向上箭头,向上移动, 同理还可以向下,左,右移动
+//			4, 如果我按下ctrl + 上下左右,走的步数变大
+			window.onload = function(){
+				var box = document.querySelector('#box');
+				window.onkeydown = function(e){
+					var e = e||event;
+					if(e.ctrlKey && e.keyCode == 67){
+						box.style.background = "rgb("+parseInt(Math.random()*256)+","+parseInt(Math.random()*256)+","+parseInt(Math.random()*256)+")";
+					}
+					if(e.ctrlKey &&e.shiftKey && e.keyCode == 82){
+						box.style.background = "red";
+					}
+					//获取当前位置
+					var x = box.offsetLeft;
+					var y = box.offsetTop;
+					//上
+					if(e.keyCode==38){
+						box.style.top=y-10+"px";
+					}else if(e.keyCode==40){
+						box.style.top=y+10+"px";
+					}else if(e.keyCode==37){
+						box.style.left=x-10+"px";
+					}else if(e.keyCode==39){
+						box.style.left=x+10+"px";
+					}
+					
+					if(e.ctrlKey && e.keyCode==38){
+						box.style.top=y-50+"px";
+					}else if(e.ctrlKey && e.keyCode==40){
+						box.style.top=y+50+"px";
+					}else if(e.ctrlKey &&e.keyCode==37){
+						box.style.left=x-50+"px";
+					}else if(e.ctrlKey && e.keyCode==39){
+						box.style.left=x+50+"px";
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+</html>
