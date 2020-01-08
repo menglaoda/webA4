@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 426px;
+				height: 640px;
+				background: url(img/iphone.jpg);
+				margin: 50px auto;
+				position: relative;
+			}
+			#box2{
+				width: 372px;
+				height: 62px;
+				position: absolute;
+				left: 28px;
+				bottom: 31px;
+			}
+			#box2 img{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var box = document.querySelector("#box");
+				var box2 = document.querySelector("#box2");
+				var img1 = document.querySelector("img");
+				img1.onmousedown = function(e){
+					var e = e||event;
+					var img1left = e.clientX-box.offsetLeft-box2.offsetLeft-img1.offsetLeft;
+					var img1top = e.clientY-box.offsetTop-box2.offsetTop;
+					console.log(img1left+","+img1top);
+					document.onmousemove = function(e){
+						var e = e||event;
+						if(e.clientX-box.offsetLeft-box2.offsetLeft-img1left<=0){
+							img1.style.left = 0;
+						}else if(e.clientX-box.offsetLeft-box2.offsetLeft-img1left>=box2.offsetWidth-img1.offsetWidth){
+							img1.style.left = box2.offsetWidth-img1.offsetWidth+"px";
+							box.style.background = "url(img/iphone2.jpg)";
+							img1.style.display = "none";
+						}
+						else{
+							img1.style.left = e.clientX-box.offsetLeft-box2.offsetLeft-img1left+"px";
+						}
+						
+					}
+					document.onmouseup = function(){
+						document.onmousemove = null;
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<div id="box2">
+				<img draggable="false" src="img/unlock_btn.jpg" />
+			</div>
+		</div>
+	</body>
+</html>
