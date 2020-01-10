@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 500px;
+				margin: 100px auto;
+				position: relative;
+			}
+			#box a{
+				box-sizing: border-box;
+				text-decoration: none;
+				width: 100px;
+				height: 30px;
+				border: solid 1px black;
+				float: left;
+				margin-left: -1px;
+				text-align: center;
+				line-height: 30px;
+				color: black;
+			}
+			#box2{
+				width: 100px;
+				height: 5px;
+				background: red;
+				position: absolute;
+				top: 25px;
+				left: -1px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oa = document.querySelectorAll("a");
+				var box2 = document.querySelector("#box2");
+				var timer ;
+				for(var i=0;i<oa.length;i++){
+					oa[i].index = i;
+					oa[i].onmouseover = function(){
+						clearInterval(timer);
+						var speed = 0;
+						console.log(box2.offsetLeft);
+						var that = this.index;
+						timer = setInterval(function(){
+							//1.目标值
+							var target = that*100-(that+1);
+							//2.获取当前位置
+							var start = box2.offsetLeft;
+							//3.给一个速度
+							speed += (target-start)/7;
+							speed*= 0.7;  //摩擦系数
+							speed=speed>0?Math.ceil(speed):Math.floor(speed);
+							console.log(start+","+target);
+							//4.开始运动
+							if(start==target){
+								clearInterval(timer);
+							}else{
+								box2.style.left = start+speed+"px";
+							}				
+						},50)
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<a href="#">首页</a>
+			<a href="#">首页</a>
+			<a href="#">首页</a>
+			<a href="#">首页</a>
+			<a href="#">首页</a>
+			<div id="box2"></div>
+		</div>
+	</body>
+</html>

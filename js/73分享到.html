@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#obox{
+				position: fixed;
+				top: 200px;
+				left: 0px;
+			}
+			#box1{
+				width: 0px;
+				height: 100px;
+				background: green;
+				float: left;
+			}
+			span{
+				float: left;
+				background: pink;
+				width: 20px;
+				text-align: center;
+				padding: 10px 0px;
+				margin-top: 10px;
+			}
+		</style>
+		<script src="js/move.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+				var obox = document.querySelector("#obox");
+				var box1 = document.querySelector("#box1");
+				obox.onmouseenter = function(){
+					move(box1,"width",200,30);
+				}
+				obox.onmouseleave = function(){
+					move(box1,"width",0,30);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="obox">
+			<div id="box1"></div>
+			<span>分享到</span>
+		</div>
+	</body>
+</html>

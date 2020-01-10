@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background: red;
+				margin-top: 10px;
+			}
+		</style>
+		<script src="js/move.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+				var obox = document.querySelectorAll("div");
+				for(var i=0;i<obox.length;i++){
+					obox[i].onmouseover = function(){
+						move(this,"width",500,30);
+					}
+					obox[i].onmouseout = function(){
+						move(this,"width",100,30);
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div ></div>
+		<div ></div>
+		<div ></div>
+		<div ></div>
+	</body>
+</html>
