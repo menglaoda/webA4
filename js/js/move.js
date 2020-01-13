@@ -28,7 +28,7 @@ function move(obj,attr,target,s,fn){
 		//3.给一个速度
 		var speed = (target-start)/5;
 		speed=speed>0?Math.ceil(speed):Math.floor(speed);
-		console.log(target+","+start);
+		
 		//4.开始运动
 		if(start==target){
 			clearInterval(obj.timer);
