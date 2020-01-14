@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 978px;
+				height: 340px;
+				border: solid 10px black;
+				margin: 100px auto;
+				position: relative;
+				overflow: hidden;
+			}
+			#box2{
+				width: 2934px;
+				height: 340px;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+			#box2 a{
+				text-decoration: none;
+			}
+			#box2>div{
+				width: 978px;
+				height: 340px;
+				float: left;
+			}
+			#box2>div>a{
+				width: 234px;
+				height: 340px;
+				float: left;
+				background: #ccc;
+				margin-right: 14px;
+			}
+			#box2>div>a:last-child{
+				margin-right: 0px;
+			}
+			#box2>div p{
+				text-align: center;
+				color: #666;
+				margin: 10px 0px;
+			}
+			#box2 img{
+				width: 200px;
+				margin: 20px auto 0px;
+				display: block;
+			}
+			#back,#next{
+				border: solid 1px black;
+				padding: 4px 10px;
+				width: 30px;
+				margin: 10px auto;
+				background: #999;
+				color: white;
+			}
+			#back{
+				background: #ccc;
+			}
+		</style>
+		<script src="js/move.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+				var box2 = document.getElementById("box2");
+				var next = document.getElementById("next");
+				var back = document.getElementById("back");
+				var obox = box2.getElementsByTagName("div");
+				var i = 0;
+				var w = obox[0].offsetWidth;
+				var timer = setInterval(banner,3000);
+				function banner(){
+					i++;
+					if(i==obox.length){
+						i=0;
+					}
+					icon();
+					move(box2,"left",-i*w,30);
+				}
+				function icon(){
+					if(i==0){
+						back.style.background = "#ccc";
+					}else{
+						back.style.background = "#999";
+					}
+					if(i==obox.length-1){
+						next.style.background = "#ccc";
+					}else{
+						next.style.background = "#999";
+					}
+				}
+				//上一张
+				back.onclick = function(){
+					clearInterval(timer);
+					i--;
+					if(i<0){
+						i=0;
+					}
+					icon();
+					move(box2,"left",-i*w,30);
+				}
+				
+				//下一张
+				next.onclick = function(){
+					clearInterval(timer);
+					i++;
+					if(i==obox.length){
+						i=2;
+					}
+					icon();
+					move(box2,"left",-i*w,30);
+				}
+				
+				//
+				window.onfocus = function(){
+					timer = setInterval(banner,3000);
+					console.log("浏览器获得焦点")
+				}
+				window.onblur = function(){
+					clearInterval(timer);
+					console.log("浏览器失去焦点")
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="back"><</div>
+		<div id="next">></div>
+		<div id="box">
+			<div id="box2">
+				<div>
+					<a href="#">
+						<img src="img/5.jpg" />
+						<p>警方的说法就</p>
+						<p>警方的说法就</p>
+						<p>警方的说法就</p>
+					</a>
+					<a href="#">
+						<img src="img/5.jpg" />
+						<p>警方的说法就</p>
+						<p>警方的说法就</p>
+						<p>警方的说法就</p>
+					</a>
+					<a href="#">
+						<img src="img/5.jpg" />
+						<p>警方的说法就</p>
+						<p>警方的说法就</p>
+						<p>警方的说法就</p>
+					</a>
+					<a href="#">
+						<img src="img/5.jpg" />
+						<p>警方的说法就</p>
+						<p>警方的说法就</p>
+						<p>警方的说法就</p>
+					</a>
+				</div>
+				<div>
+					<a href="#">
+						<img src="img/5.jpg" />
+						<p>警方的说法就</p>
+						<p>警方的说法就</p>
+						<p>警方的说法就</p>
+					</a>
+					<a href="#">
+						<img src="img/5.jpg" />
+						<p>警方的说法就</p>
+						<p>警方的说法就</p>
+						<p>警方的说法就</p>
+					</a>
+					<a href="#">
+						<img src="img/5.jpg" />
+						<p>警方的说法就</p>
+						<p>警方的说法就</p>
+						<p>警方的说法就</p>
+					</a>
+					<a href="#">
+						<img src="img/5.jpg" />
+						<p>警方的说法就</p>
+						<p>警方的说法就</p>
+						<p>警方的说法就</p>
+					</a>
+				</div>
+				<div>
+					<a href="#">
+						<img src="img/5.jpg" />
+						<p>警方的说法就</p>
+						<p>警方的说法就</p>
+						<p>警方的说法就</p>
+					</a>
+					<a href="#">
+						<img src="img/5.jpg" />
+						<p>警方的说法就</p>
+						<p>警方的说法就</p>
+						<p>警方的说法就</p>
+					</a>
+					<a href="#">
+						<img src="img/5.jpg" />
+						<p>警方的说法就</p>
+						<p>警方的说法就</p>
+						<p>警方的说法就</p>
+					</a>
+					<a href="#">
+						<img src="img/5.jpg" />
+						<p>警方的说法就</p>
+						<p>警方的说法就</p>
+						<p>警方的说法就</p>
+					</a>
+				</div>
+			</div>	
+		</div>
+	</body>
+</html>
