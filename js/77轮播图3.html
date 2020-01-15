@@ -3,6 +3,196 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 1226px;
+				height: 460px;
+				border: solid 10px black;
+				margin: 100px auto;
+				position: relative;
+				overflow: hidden;
+			}
+			#box2{
+				width: 7356px;
+				height: 460px;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+			#box2 img{
+				width: 1226px;
+				height: 460px;
+				float: left;
+			}
+			.back{
+				width: 41px;
+				height: 69px;
+				background: url(img/icon-slides.png) -83px 0px;
+				position: absolute;
+				left: 0px;
+				top: 50%;
+				margin-top: -34px;
+				display: none;
+			}
+			.back:hover{
+				background: url(img/icon-slides.png) -0px 0px;
+			}
+			.next{
+				width: 41px;
+				height: 69px;
+				background: url(img/icon-slides.png) -125px 0px;
+				position: absolute;
+				right: 0px;
+				top: 50%;
+				margin-top: -34px;
+				display: none;
+			}
+			#box:hover .next,#box:hover .back{
+				display: block;
+			}
+			.next:hover{
+				background: url(img/icon-slides.png) -42px 0px;
+			}
+			.list{
+				list-style: none;
+				position: absolute;
+				bottom: 30px;
+				left: 50%;
+				margin-left: -75px;
+				width: 150px;
+				height: 30px;
+				line-height: 30px;
+				background: rgba(255,255,255,0.5);
+				border-radius: 10px;
+				text-align: center;
+			}
+			.list li{
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				background: white;
+				margin-top: 5px;
+				display: inline-block;
+			}
+			.list li:first-child{
+				background: orangered;
+			}
+		</style>
+		<script src="js/move.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+				var box = document.getElementById("box");
+				var box2 = document.getElementById("box2");
+				var oimg = box2.getElementsByTagName("img");
+				var oli = document.getElementsByTagName("li");
+				var back = document.querySelector(".back");
+				var next = document.querySelector(".next");
+				var i = 0 ;
+				var running = 0;
+				var w = oimg[0].offsetWidth;
+				var timer = setInterval(banner,3000);
+				function banner(){
+					i++;
+					running = 1;
+					if(i==oimg.length){
+						i=1;
+						box2.style.left = "0px";
+					}
+					icon();
+					move(box2,"left",-i*w,30,function(){
+						running = 0;
+					});
+					console.log("定时器开启")
+				}
+				
+				function icon(){
+					for(var j=0;j<oli.length;j++){
+						oli[j].style.background = "white";
+					}
+					if(i==oli.length){
+						oli[0].style.background="orangered";
+					}else{
+						oli[i].style.background="orangered";
+					}
+					
+				}
+				box.onmouseenter = function(){
+					clearInterval(timer);
+				}
+				box.onmouseleave = function(){
+					clearInterval(timer);
+					timer = setInterval(banner,3000);
+				}
+				back.onmouseenter = function(){
+					clearInterval(timer);
+					timer = setInterval(banner,3000);
+					
+				}
+				next.onmouseenter = function(){
+					clearInterval(timer);
+					timer = setInterval(banner,3000);
+				}
+				back.onmouseleave = function(){
+					clearInterval(timer);
+				}
+				next.onmouseleave = function(){
+					clearInterval(timer);
+					console.log("b")
+				}
+				window.onblur = function(){
+					clearInterval(timer);
+				}
+				window.onfocus = function(){
+					timer = setInterval(banner,3000);
+				}
+				//下一张
+				next.onclick = function(){					
+					if(running==0){
+						clearInterval(timer);
+						banner();
+						timer = setInterval(banner,3000);					
+					}	
+				}
+				//上一张
+				back.onclick = function(){
+					if(running==0){
+						clearInterval(timer);
+						i--;
+						running = 1;
+						if(i<0){
+							i=oimg.length-2;
+							box2.style.left = -(oimg.length-1)*oimg[0].offsetWidth+"px";
+						}
+						icon();
+						move(box2,"left",-i*w,30,function(){
+							running = 0;
+						});
+						timer = setInterval(banner,3000);					
+					}
+				}
+				//点击圆圈
+				for(var k=0;k<oli.length;k++){
+					oli[k].index = k;
+					oli[k].onclick = function(){
+						if(running==0){
+							clearInterval(timer);
+							running = 1 ;
+							i=this.index;
+							icon();
+							move(box2,"left",-i*w,30,function(){
+								running = 0;
+							});
+							timer = setInterval(banner,3000);
+						}
+						
+					}
+				}
+			}
+		</script>
 	</head>
 	<body>
 		<div id="box">
@@ -14,6 +204,15 @@
 				<img src="img/5.jpg" />
 				<img src="img/1.jpg" />
 			</div>
+			<div class="back"></div>
+			<div class="next"></div>
+			<ul class="list">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
 		</div>
 	</body>
 </html>
